@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import joblib
 import sklearn.metrics as sm
-from PIL import Image
+import PIL 
 st.set_page_config(page_title="Calorie Prediction App")
 d1={'Gender': 2.2357162090988796,
  'Age': 15.43951313410011,
@@ -48,8 +48,8 @@ if option=='Accuracy':
     st.sidebar.header('RandomForest:'+a2+'%')
     st.sidebar.header('SVM:'+a+'%')
 if option=='Dependency':
-    image=Image.open('bar.png')
-    heat=Image.open('heat.png')
+    image=PIL.Image.open('bar.png')
+    heat=PIL.Image.open('heat.png')
     graphs = [image,heat]
     #image_iterator = paginator(graphs)
     #indices_on_page, images_on_page = map(list, zip(*image_iterator))
