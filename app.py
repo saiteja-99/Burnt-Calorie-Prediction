@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import joblib
 import sklearn.metrics as sm
-import PIL 
+#import PIL 
 st.set_page_config(page_title="Calorie Prediction App")
 d1={'Gender': 2.2357162090988796,
  'Age': 15.43951313410011,
@@ -28,7 +28,8 @@ Weight=st.text_input('Weight')
 Duration=st.text_input('Duration')
 HeartRate=st.text_input('Heart Rate')
 BodyTemperature=st.text_input('Body Temp')
-option=st.sidebar.selectbox('select the model',('RandomForest','SVM','KNN','Accuracy','Dependency'))
+#option=st.sidebar.selectbox('select the model',('RandomForest','SVM','KNN','Accuracy','Dependency'))
+option=st.sidebar.selectbox('select the model',('RandomForest','SVM','KNN','Accuracy'))
 def BMI():
     if bmi<18.5:
         return ' (Under Weight)'
@@ -47,7 +48,7 @@ if option=='Accuracy':
     st.sidebar.header('KNN:'+a1+'%')
     st.sidebar.header('RandomForest:'+a2+'%')
     st.sidebar.header('SVM:'+a+'%')
-if option=='Dependency':
+"""if option=='Dependency':
     image=PIL.Image.open('bar.png')
     heat=PIL.Image.open('heat.png')
     graphs = [image,heat]
@@ -55,7 +56,7 @@ if option=='Dependency':
     #indices_on_page, images_on_page = map(list, zip(*image_iterator))
     #st.sidebar.image(images_on_page, width=300)
     st.sidebar.image(image,width=350)
-    st.sidebar.image(heat,width=350)
+    st.sidebar.image(heat,width=350)"""
 if st.button('predict'):
     if option=='Accuracy':
         st.error("select model for prediction(not Accuracy)")
