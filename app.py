@@ -54,10 +54,10 @@ if st.button('predict'):
         st.warning("enter all values")
     else:
         if option=='RandomForest':
-            model=joblib.load('RandomForest')
+            model=joblib.load(RandomForest)
             op=model.predict([[Gender,Age,Height,Weight,Duration,HeartRate,BodyTemperature]])
         elif option=='SVM':
-            model=joblib.load('Svm')
+            model=joblib.load(Svm)
             Age=int(Age)
             Height=int(Height)
             Weight=int(Weight)
@@ -66,7 +66,7 @@ if st.button('predict'):
             BodyTemperature=int(BodyTemperature)
             op=model.predict([[Gender,Age,Height,Weight,Duration,HeartRate,BodyTemperature]])
         elif option=='KNN':
-            model=joblib.load('KNN')
+            model=joblib.load(KNN)
             Age=int(Age)
             Height=int(Height)
             Weight=int(Weight)
