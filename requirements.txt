@@ -2,4 +2,3 @@ streamlit ==1.32.2
 joblib
 numpy
 scikit_learn
-PIL ==9.4.0
